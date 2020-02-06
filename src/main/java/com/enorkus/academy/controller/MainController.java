@@ -1,7 +1,6 @@
 package com.enorkus.academy.controller;
 
 import com.enorkus.academy.entity.Customer;
-import com.enorkus.academy.repository.CustomerRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,10 +9,8 @@ import java.util.List;
 @RequestMapping("/api")
 public class MainController {
 
-    private CustomerRepository repository;
-
     public MainController() {
-        repository = new CustomerRepository();
+        
     }
 
     @RequestMapping("/customer/all")
