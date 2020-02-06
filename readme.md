@@ -1,28 +1,28 @@
-#1. Exercise: Make it work
+### 1. Exercise: Make it work
 At the moment the application is not finished and does nothing.
 
-Requirements:
+**Requirements:**
 
 * It should be possible to save customers, delete customers and fetch all customers.
 
-Acceptance criteria:
+**Acceptance criteria:**
 
 * MainController uses CustomerRepository for insert/delete/fetch operations.
 
 * It's possible to insert, delete and display Customers.
 
-Hint: For CustomerRepository instance inside MainController a simple initialization through constructor or springs dependency injection can be used.
+**Hint:** For CustomerRepository instance inside MainController a simple initialization through constructor or springs dependency injection can be used.
 
 [Input/Output tests for finished exercise](https://bitbucket.org/enorkus/images/src/master/exercise-1-solution-io.md)
 
-#2. Exercise: Apply some formatting and decouple
+### 2. Exercise: Apply some formatting and decouple
 Let’s apply some formatting for certain inputs. As we add more code it’s apparent that business logic must also be decoupled from other layers.
 
-Requirements:
+**Requirements:**
 
 * No matter how a user entered their first and last name they should always be saved with first letters capitalized. Personal number should have a dash after first 4 digits.
 
-Acceptance criteria:
+**Acceptance criteria:**
 
 * CustomerRepository is converted to interface.
 * MemoryCustomerRepository implements CustomerRepository.
@@ -35,32 +35,32 @@ Acceptance criteria:
 
 [Input/Output tests for finished exercise](https://bitbucket.org/enorkus/images/src/master/exercise-2-solution-io.md)
 
-#3. Exercise: Did you just mutate that data?
+### 3. Exercise: Did you just mutate that data?
 In software development data mutation (mutability) is an unwanted side effect of programming which should be avoided as much as possible.
 
-Requirements:
+**Requirements:**
 
 * The mutated Customer properties (first name, last name and personal number) should not be set onto the same Customer object coming from MainController. To make things right, a new Customer object with all the same properties from old Customer, plus new first name, last name and personal number should be created. To make things even better - builder pattern should be implemented.
 
-Acceptance criteria:
+**Acceptance criteria:**
 
 * Customer object is not mutated before passing it to CustomerRepository.
 * New instance of Customer is created with all original Customer's data plus formatted ones.
 * To create Customer object a builder pattern is used.
 
-Hint: Three attributes - first name, last name and personal number are mandatory. 
+**Hint:** Three attributes - first name, last name and personal number are mandatory. 
 Note: Make an exception and leave setter for customer id, since it's used to determine which of the customers has to be deleted, but don't include it in the builder.
 
 [Input/Output tests for finished exercise](https://bitbucket.org/enorkus/images/src/master/exercise-3-solution-io.md)
 
-#4. Exercise: Input validation
+### 4. Exercise: Input validation
 At the moment users can enter almost anything they want and it would get stored. The application needs validation to check for invalid input.
 
-Requirements: 
+**Requirements:**
 
 * First name, last name and personal number are marked as mandatory inputs in frontend. Validation for those 3 attributes and age has to be implemented.
 
-Acceptance criteria:
+**Acceptance criteria:**
 
 * Validation for mandatory attributes: first name, last name and personal number is implemented.
 * Validator class is implemented to validate the input before formatting/storing.
@@ -72,12 +72,12 @@ Acceptance criteria:
 
 [Input/Output tests for finished exercise](https://bitbucket.org/enorkus/images/src/master/exercise-4-solution-io.md)
 
-#4.1 Exercise: Input validation
+### 4.1 Exercise: Input validation
 
-Requirements: 
+**Requirements:**
 * Age is now also a mandatory input, so validation for age restriction has to be implemented. Also only LT, LV, EE and SE are accepted as country code values if one was provided.
 
-Acceptance criteria:
+**Acceptance criteria:**
 
 * New type of validation Exception class CustomerNotAdultException created for age validation. HTTP code should be the same as for MandatoryValueMissingException.
 * Validation for age is implemented: age is mandatory and cannot submit customer with age less than 18.
@@ -86,16 +86,16 @@ Acceptance criteria:
 * Validation exception is thrown when trying to submit customer with age under 18.
 * Validation exception is thrown when trying to submit customer with country code other than LT, LV, EE or SE. Country code validation id not triggered if no country code was provided at all.
 
-Hint: See the way MandatoryValueMissingException is constructed. A default message can be passed to @ResponseStatus annotation by attribute: reason = “Message text”.
+**Hint:** See the way MandatoryValueMissingException is constructed. A default message can be passed to @ResponseStatus annotation by attribute: reason = “Message text”.
 
 [Input/Output tests for finished exercise](https://bitbucket.org/enorkus/images/src/master/exercise-4.1-solution-io.md)
 
-#5 Exercise: Reusable validators
+### 5 Exercise: Reusable validators
 
-Requirements: 
+**Requirements:**
 * Let’s imagine customer application is way bigger than it is and we need to validate a bunch of similar attributes that we validate for Customer object. Let’s create reusable validators just for those purposes.
 
-Acceptance criteria:
+**Acceptance criteria:**
 
 * Abstract class Validator<T> accepting generic T is created.
 * Abstract Validator has a single method: public abstract void validate(T attribute, String message).
