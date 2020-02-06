@@ -1,0 +1,30 @@
+buildscript {
+	ext {
+		springBootVersion = '2.1.2.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+}
+
+apply plugin: 'java'
+
+group = 'com.enorkus'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+repositories {
+	flatDir {
+		dirs 'lib'
+	}
+}
+
+dependencies {
+	compile group: 'org.springframework', name: 'spring-web', version: '5.2.2.RELEASE'
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.2.4.RELEASE'
+}
+
