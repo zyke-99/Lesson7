@@ -13,7 +13,9 @@ At the moment the application is not finished and does nothing.
 
 **Hint:** For CustomerRepository instance inside MainController a simple initialization through constructor or springs dependency injection can be used.
 
-[Input/Output tests for finished exercise](https://bitbucket.org/enorkus/images/src/master/exercise-1-solution-io.md)
+**Input/Output tests for finished exercise:**
+
+1. [I/O Test 1](https://github.com/enorkus/customer-app-io/blob/master/1.solution.png)
 
 ### 2. Exercise: Apply some formatting and decouple
 Let’s apply some formatting for certain inputs. As we add more code it’s apparent that business logic must also be decoupled from other layers.
@@ -33,7 +35,10 @@ Let’s apply some formatting for certain inputs. As we add more code it’s app
 * Personal number has a dash after first 4 digits after saving (entering 123456789 and saving must end up as 1234-56789 in the table)
 * Submitting should not fail trying to submit empty values or if personal number is less than 4 characters.
 
-[Input/Output tests for finished exercise](https://bitbucket.org/enorkus/images/src/master/exercise-2-solution-io.md)
+**Input/Output tests for finished exercise:**
+
+1. [I/O Test 1](https://github.com/enorkus/customer-app-io/blob/master/2.solution.png)
+2. [I/O Test 2](https://github.com/enorkus/customer-app-io/blob/master/2.1.solution.png)
 
 ### 3. Exercise: Did you just mutate that data?
 In software development data mutation (mutability) is an unwanted side effect of programming which should be avoided as much as possible.
@@ -51,7 +56,9 @@ In software development data mutation (mutability) is an unwanted side effect of
 **Hint:** Three attributes - first name, last name and personal number are mandatory. 
 Note: Make an exception and leave setter for customer id, since it's used to determine which of the customers has to be deleted, but don't include it in the builder.
 
-[Input/Output tests for finished exercise](https://bitbucket.org/enorkus/images/src/master/exercise-3-solution-io.md)
+**Input/Output tests for finished exercise:**
+
+1. [I/O Test 1](https://github.com/enorkus/customer-app-io/blob/master/3.solution.png)
 
 ### 4. Exercise: Input validation
 At the moment users can enter almost anything they want and it would get stored. The application needs validation to check for invalid input.
@@ -70,7 +77,12 @@ At the moment users can enter almost anything they want and it would get stored.
 * HTTP error code 422 and appropriate message is seen under table when trying to submit invalid inputs.
 * Submitting spaces as input should also fail with the same exception and message.
 
-[Input/Output tests for finished exercise](https://bitbucket.org/enorkus/images/src/master/exercise-4-solution-io.md)
+**Input/Output tests for finished exercise:**
+
+1. [I/O Test 1](https://github.com/enorkus/customer-app-io/blob/master/4.solution.png)
+2. [I/O Test 2](https://github.com/enorkus/customer-app-io/blob/master/4.1.solution.png)
+3. [I/O Test 3](https://github.com/enorkus/customer-app-io/blob/master/4.2.solution.png)
+4. [I/O Test 4](https://github.com/enorkus/customer-app-io/blob/master/4.3.solution.png)
 
 ### 4.1 Exercise: Input validation
 
@@ -88,7 +100,13 @@ At the moment users can enter almost anything they want and it would get stored.
 
 **Hint:** See the way MandatoryValueMissingException is constructed. A default message can be passed to @ResponseStatus annotation by attribute: reason = “Message text”.
 
-[Input/Output tests for finished exercise](https://bitbucket.org/enorkus/images/src/master/exercise-4.1-solution-io.md)
+**Input/Output tests for finished exercise:**
+
+1. [I/O Test 1](https://github.com/enorkus/customer-app-io/blob/master/4-1.solution.png)
+2. [I/O Test 2](https://github.com/enorkus/customer-app-io/blob/master/4-1.1.solution.png)
+3. [I/O Test 3](https://github.com/enorkus/customer-app-io/blob/master/4-1.2.solution.png)
+4. [I/O Test 4](https://github.com/enorkus/customer-app-io/blob/master/4-1.3.solution.png)
+5. [I/O Test 5](https://github.com/enorkus/customer-app-io/blob/master/4-1.4.solution.png)
 
 ### 5 Exercise: Reusable validators
 
